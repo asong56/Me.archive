@@ -6,7 +6,7 @@
 </h6>
 
 <p align="center">
-  Curator: <a href="https://ansel-s.github.io" target="_blank">Ansel-S</a> | Engine: <a href="https://docsify.js.org/" target="_blank">Docsify</a>
+  Curator: <a href="https://asong56.github.io" target="_blank">Ansel S</a> | Engine: <a href="https://docsify.js.org/" target="_blank">Docsify</a>
 </p>
 
 ---
