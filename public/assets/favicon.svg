@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <style>
+        .stroke { stroke: #363028; }
+        .fill { fill: #363028; }
+        
+        @media (prefers-color-scheme: dark) {
+          .stroke { stroke: #A898AE; }
+          .fill { fill: #A898AE; }
+        }
+    </style>
+    
+    <g class="stroke" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        
+        <path d="M15 35 C 15 25, 45 25, 48 35 L48 85 C 45 75, 15 75, 15 85 Z"/>
+        
+        <path d="M85 35 C 85 25, 55 25, 52 35 L52 85 C 55 75, 85 75, 85 85 Z"/>
+
+        <path d="M48 35 C 50 32, 50 32, 52 35"/>
+        <path d="M48 85 C 50 82, 50 82, 52 85"/>
+
+    </g>
+</svg>
