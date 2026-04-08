@@ -120,3 +120,12 @@ $$\frac{MP_L}{P_L} = \frac{MP_K}{P_K}$$
 ## 7. Market Failures & Externalities
 * **Positive Externality**: $MSB > MPB$. Under-allocation. Solution: **Subsidy**.
 * **Negative Externality**: $MSC > MPC$. Over-allocation. Solution: **Tax**.
+
+---
+
+<details>
+<summary>⌨️ Source Code</summary>
+
+[graphs.ipynb ↗](https://github.com/asong56/Me.archive/main/lib/ap-microecon/graphs.ipynb ":target=_blank")
+
+</details>

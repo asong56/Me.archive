@@ -13,21 +13,21 @@
 
 ## 🕯️ Featured
 
-* **[Iris Morphological Study](https://github.com/Ansel-S/Iris-Data-Analysis)** - High-dimensional taxonomy analysis.
+* **[Iris Morphological Study](https://github.com/asong56/Iris-Data-Analysis)** - High-dimensional taxonomy analysis.
 * **[Hubspot Inbound Marketing](./inbound-marketing/)** - Digital strategy and lead generation.
-* **[@barrys27/ui](https://www.npmjs.com/package/@barrys27/ui/)** - A minimalist CSS/SCSS architecture inspired by iOS HIG, designed for high-density data interfaces.
 * **[Awesome Lists](./awesome/)** - Curated resources and toolkits.
 
 ---
 
 ## 🕒 Changelog
 
+* **2026-04-08** - Refactor repo structure
 * **2026-03-16** - Optimize Docsify index page layout
 
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Archive Activity" />
+  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="Ansel's Contributions" />
 </p>
 
 ---
