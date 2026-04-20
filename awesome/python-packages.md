@@ -1,6 +1,6 @@
-# Awesome Python Data & AI Ecosystem [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# Awesome Python Ecosystem [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-*A curated list of the most popular and influential Python packages for Data Science, Machine Learning, and AI in 2026.*
+*A curated list of the most popular and influential Python packages in 2026.*
 
 ---
 
@@ -10,6 +10,7 @@
 * [🧠 Machine Learning & AI](#-machine-learning--ai) — *Industry-standard frameworks for training and optimization.*
 * [🤖 Generative AI & LLM Tools](#-generative-ai--llm-tools) — *The modern stack for RAG, Agents, and Transformer models.*
 * [📈 Visualization & Web Deployment](#-visualization--web-deployment) — *Building interactive dashboards and high-speed AI APIs.*
+* [🛠️ Development Tools & Utilities](#-development-tools--utilities) — *Essential tools for package management, formatting, logging, and debugging.*
 * [🤝 Contributing](#contributing) — *How to help improve this ecosystem.*
 
 ---
@@ -18,6 +19,7 @@
 *Standard tools for manipulating and scaling structured data.*
 
 * [Dask](https://github.com/dask/dask) - Parallel computing library that scales NumPy, Pandas, and Scikit-Learn workflows.
+* [DuckDB](https://github.com/duckdb/duckdb) - An in-process SQL OLAP database management system designed for fast analytical queries.
 * [NumPy](https://github.com/numpy/numpy) - The fundamental package for scientific computing with N-dimensional arrays.
 * [Pandas](https://github.com/pandas-dev/pandas) - The industry standard for data manipulation and analysis via DataFrames.
 * [Polars](https://github.com/pola-rs/polars) - A blazingly fast DataFrame library written in Rust; the modern alternative to Pandas.
@@ -74,8 +76,10 @@
 ## 🤖 Generative AI & LLM Tools
 *The modern stack for Large Language Models and AI Agents.*
 
+* [LanceDB](https://github.com/lancedb/lancedb) - A developer-friendly, serverless vector database for AI applications.
 * [LangChain](https://github.com/langchain-ai/langchain) - A framework for developing applications powered by language models and agents.
 * [LlamaIndex](https://github.com/run-llama/llama_index) - A data framework for connecting private data sources to LLMs (RAG).
+* [PydanticAI](https://github.com/pydantic/pydantic-ai) - An agent framework powered by Pydantic, bringing strict typing and validation to generative AI.
 * [Transformers](https://github.com/huggingface/transformers) - The industry standard library for state-of-the-art ML models (Hugging Face).
 
 <details>
@@ -95,6 +99,7 @@
 
 * [Bokeh](https://github.com/bokeh/bokeh) - Powerful library for highly customized, high-performance web visualizations.
 * [FastAPI](https://github.com/tiangolo/fastapi) - High-performance web framework for building AI APIs with Python types.
+* [Matplotlib](https://github.com/matplotlib/matplotlib) - The foundational, comprehensive library for creating static, animated, and interactive visualizations.
 * [Plotly](https://github.com/plotly/plotly.py) - Interactive graphing library ideal for beautiful web-based dashboards.
 * [Pydantic](https://github.com/pydantic/pydantic) - Data validation and settings management using Python type hints.
 * [Seaborn](https://github.com/mwaskom/seaborn) - High-level interface for drawing attractive and informative statistical graphics.
@@ -110,6 +115,21 @@
 | **Customization** | Standard Templates | Deeply customizable pixels |
 
 </details>
+
+---
+
+## 🛠️ Development Tools & Utilities
+*Essential tools for package management, formatting, logging, and debugging.*
+
+* [HTTPX](https://github.com/projectdiscovery/httpx) - A fully featured, next-generation HTTP client with async support.
+* [IceCream](https://github.com/gruns/icecream) - A sweet and creamy print debugging tool (never use standard `print()` to debug again).
+* [InquirerPy](https://github.com/kazhala/InquirerPy) - A Python port of Inquirer.js for building beautiful interactive command-line interfaces.
+* [Loguru](https://github.com/Delgan/loguru) - Python logging made (stupidly) simple with zero configuration needed out of the box.
+* [Pathlib](https://docs.python.org/3/library/pathlib.html) - Object-oriented filesystem paths (built-in to Python, but essential for modern development).
+* [Pendulum](https://github.com/sdispater/pendulum) - Python datetimes made easy; a smarter drop-in replacement for the standard `datetime` module.
+* [PyO3](https://github.com/PyO3/pyo3) - Rust bindings for Python, allowing developers to write native Python extensions in Rust.
+* [Ruff](https://github.com/astral-sh/ruff) - An extremely fast Python linter and code formatter, written in Rust.
+* [uv](https://github.com/astral-sh/uv) - An incredibly fast Python package and project manager, written in Rust, designed as a drop-in replacement for `pip`.
 
 ---
 
