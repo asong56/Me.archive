@@ -1,6 +1,6 @@
 # PSYC 110
 
-## Introduction
+## Lecture 0 | Introduction
 
 - Textbook: `Peter Gray's Psychology, 5th edition`
 - Short Readings: `The Norton Reader edited by Gary Marcus`
@@ -13,7 +13,7 @@ Scientific Psychology: Materialism
 
 ---
 
-## Foundations
+## Lecture 1 | Foundations
 
 ### The Neuron
 
@@ -33,7 +33,7 @@ As Lewis Carroll's Alice might have phrased it,
 
 ---
 
-## Foundations: Freud
+## Lecture 3 | Foundations: Freud
 
 ### 1. The Core Conflict: Structure of Mind
 Freud believed personality is a constant battle between three forces driven by **Unconscious Motivation**.
@@ -69,3 +69,45 @@ Modern psychology is often critical of Freud for several reasons:
 * **Penis Envy:** Viewed as sexist and outdated.
 * **Unfalsifiability:** His theories are impossible to test, prove, or disprove. If a theory cannot be tested, it is not considered "scientific."
 * **The Legacy:** Despite the flaws, he correctly identified that the **unconscious mind** and **childhood experiences** are incredibly powerful.
+
+---
+
+## Lecture 4 | Foundations: Skinner
+
+### 1. More About Freud
+Most mental activities are unconscious.
+
+Humans need:
+- Deceiving others to appear better
+- Spotting if someone is lying to you
+- The best lies = **The ones you believe yourself**
+
+*The children 'truly believe in sadness' -> more authentic performance*
+
+### 2. Behaviorism
+Representative Figures: `John B. Watson` & `B. F. Skinner`
+
+Core Propositions:
+- Everything is derived from learning (no innate nature)
+- Opposing studies on mental state (solely on behavior)
+- Humans and animals are fundamentally the same
+
+### 3. Learning Mechanisms
+
+1. Habituation: Ignoring irrelevant information
+2. Classical Conditioning: `stimulus` -> `response` (Ivan Pavlov)
+   - Extinction
+   - Spontaneous Recovery
+   - Generalization
+3. Operant Conditioning: The consequences of an action determine whether it is repeated
+   - `reward` -> behavior increase
+   - `punishment` -> behavior decrease
+   - **Reinforcement**
+     - Positive ~: Giving reward
+     - Negative ~: Removing pain
+     - **Negative Reinforcement != Punishment**
+     - Shaping
+     - Partial ~
+
+### 4. Criticisms of Behaviorism
+[*Too Extreme*](#2-behaviorism)
