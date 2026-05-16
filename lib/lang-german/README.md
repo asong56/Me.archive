@@ -1,113 +1,175 @@
 # 🇩🇪 Comprehensive German Grammar & Verb Mastery
 
 ## I. The German Case System & Articles
-This chart defines the fundamental changes for articles based on gender and case.
 
 ### 1. Definite & Indefinite Articles
+This master chart defines the modifications for both definite and indefinite articles. It is structured strictly by structural case order (**Nominativ, Genitiv, Akkusativ, Dativ**) and grammatical gender order (**Masculine, Neuter, Feminine, Plural**).
+
 | Case | Masculine (m) | Neuter (n) | Feminine (f) | Plural (pl) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Nominative** | der | das | die | die |
-| **Accusative** | den | das | die | die |
-| **Dative** | dem | dem | der | den (...n) |
-| **Genitive** | des | des | der | der |
+| **Nominativ** | der | das | die | die |
+| **Genitiv** | des *(-s)* | des *(-s)* | der | der |
+| **Akkusativ** | den | das | die | die |
+| **Dativ** | dem | dem | der | den *(-n)* |
 
 ### 2. Adjective Endings (Mixed Declension)
-* **Masculine (m):** Nom: **-er** | Acc: **-en** | Dat: **-en** | Gen: **-en**
-* **Neuter (n):** Nom: **-es** | Acc: **-es** | Dat: **-en** | Gen: **-en**
-* **Feminine (f):** Nom: **-e** | Acc: **-e** | Dat: **-en** | Gen: **-en**
-* **Plural (pl):** Nom: **-en** | Acc: **-en** | Dat: **-en** | Gen: **-en**
+*This pattern applies when an adjective follows an indefinite article (ein/eine), a possessive determiner (mein/dein), or the negative marker "kein".*
+
+| Case | Masculine (m) | Neuter (n) | Feminine (f) | Plural (pl) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Nominativ** | -er | -es | -e | -en |
+| **Genitiv** | -en | -en | -en | -en |
+| **Akkusativ** | -en | -es | -e | -en |
+| **Dativ** | -en | -en | -en | -en |
 
 ---
 
-## II. Modal Verbs (Prateritum)
-Modal verbs follow a pattern where the 1st and 3rd person singular forms are identical.
+## II. Modal Verbs (Präteritum)
+Conjugation paradigms are completely expanded and organized by strict grammatical person hierarchy (*ich, du, er/sie/es, wir, ihr, sie/Sie*).
 
-| Verb | ich / er,sie,es | du | wir / sie,Sie | ihr |
-| :--- | :--- | :--- | :--- | :--- |
-| **können** | konnte | konntest | konnten | konntet |
-| **müssen** | musste | musstest | mussten | musstet |
-| **sollen** | sollte | solltest | sollten | solltet |
-| **dürfen** |  durfte | durftest | durften | durftet |
-| **wollen / möchten** |  wollte | wolltest | wollten | wolltet |
-| **mögen**|  möchte | möchtest| möchten| möchtet |
+| Verb | ich | du | er/sie/es | wir | ihr | sie/Sie |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **dürfen** | durfte | durftest | durfte | durften | durftet | durften |
+| **können** | konnte | konntest | konnte | konnten | konntet | konnten |
+| **mögen** | mochte | mochtest | mochte | mochten | mochtet | mochten |
+| **müssen** | musste | musstest | musste | mussten | musstet | mussten |
+| **sollen** | sollte | solltest | sollte | sollten | solltet | sollten |
+| **wollen** | wollte | wolltest | wollte | wollten | wolltet | wollten |
 
 ---
 
 ## III. Verb Categorization (Core Vocabulary)
-Verbs are grouped by function/theme, then sorted A-Z within each group.
+All verbs are consolidated into logical thematic domains. To maximize utility, each entry includes its **3rd-Person Singular Present** form (highlighting stem-vowel changes), its **Perfekt** form, and its morphological class (**Strong, Weak, Mixed**). Every table is sorted strictly A–Z.
 
 ### 1. Existence, State & Change
-*Core verbs describing being, becoming, and the end of life.*
+*Core verbs describing physical states, biological developments, and life transitions.*
 
-| Verb (Infinitive) | Meaning | Participle (Perfekt) | Type |
+| Infinitive | Perfekt | Type | Meaning |
 | :--- | :--- | :--- | :--- |
-| **ersticken** | to suffocate | erstickt | Weak |
-| **ertrinken** | to drown | ertrunken | Strong |
-| **explodieren** | to explode | explodiert | Weak |
-| **passieren** | to happen | passiert | Weak |
-| **sterben** | to die | gestorben | Strong |
-| **umkommen** | to perish/die | umgekommen | Strong |
-| **wachsen** | to grow | **gewachsen** | Strong |
-| **werden** | to become | geworden | Strong |
+| **ersticken** | ist erstickt | Weak | to suffocate |
+| **ertrinken** | ist ertrunken | Strong | to drown |
+| **explodieren** | ist explodiert | Weak | to explode |
+| **passieren** | ist passiert | Weak | to happen |
+| **sterben** | ist gestorben | Strong | to die |
+| **umkommen** | ist umgekommen | Strong | to perish / die |
+| **wachsen** | ist gewachsen | Strong | to grow |
+| **werden** | ist geworden | Strong | to become |
+| **zittern** | hat gezittert | Weak | to shake / tremble |
 
 ### 2. Communication, Cognition & Expression
-*Verbs related to the mind and speaking.*
+*Verbs related to mental processing, thought, reactions, and speech.*
 
-| Verb (Infinitive) | Meaning | Participle (Perfekt) | Type |
+| Infinitive | Perfekt | Type | Meaning |
 | :--- | :--- | :--- | :--- |
-| **denken** | to think | gedacht | Strong (Mixed) |
-| **erklären** | to explain | erklärt | Weak |
-| **erzählen** | to tell/narrate | erzählt | Weak |
-| **kennen** | to know (person/place) | gekannt | Strong (Mixed) |
-| **meinen** | to mean/opine | gemeint | Weak |
-| **schreiben** | to write | geschrieben | Strong |
-| **singen** | to sing | gesungen | Strong |
-| **sprechen** | to speak | gesprochen | Strong |
-| **wissen** | to know (facts) | gewusst | Strong (Mixed) |
+| **denken** | hat gedacht | Mixed | to think |
+| **erklären** | hat erklärt | Weak | to explain |
+| **erzählen** | hat erzählt | Weak | to tell / narrate |
+| **kennen** | hat gekannt | Mixed | to know (a person/place) |
+| **meinen** | hat gemeint | Weak | to mean / opine |
+| **reagieren** | hat reagiert | Weak | to react |
+| **schreiben** | hat geschrieben | Strong | to write |
+| **singen** | hat gesungen | Strong | to sing |
+| **sprechen** | hat gesprochen | Strong | to speak |
+| **überlegen** | hat überlegt | Weak | to consider / ponder |
+| **wissen** | hat gewusst | Mixed | to know (a fact) |
 
 ### 3. Movement, Travel & Routine
-*Getting from A to B and daily hygiene.*
+*Locomotion, transit, structured sightseeing, and daily physical maintenance.*
 
-| Verb (Infinitive) | Meaning | Participle (Perfekt) | Type |
+| Infinitive | Perfekt | Type | Meaning |
 | :--- | :--- | :--- | :--- |
-| **aussteigen** | to get off/out | **ausgestiegen** | Strong |
-| **baden** | to bathe | gebadet | Weak |
-| **besichtigen** | to sightsee | besichtigt | Weak |
-| **bringen** | to bring/take | gebracht | Strong (Mixed) |
-| **duschen** | to shower | geduscht | Weak |
-| **einsteigen** | to get in/on | eingestiegen | Strong |
-| **fliegen** | to fly | geflogen | Strong |
-| **packen** | to pack | gepackt | Weak |
-| **reisen** | to travel | gereist | Weak |
-| **schwimmen** | to swim | geschwommen | Strong |
+| **aussteigen** | ist ausgestiegen | Strong | to get off / out |
+| **baden** | hat gebadet | Weak | to bathe |
+| **besichtigen** | hat besichtigt | Weak | to sightsee |
+| **bringen** | hat gebracht | Mixed | to bring / take |
+| **bummeln** | ist/hat gebummelt | Weak | to stroll |
+| **duschen** | hat geduscht | Weak | to shower |
+| **einsteigen** | ist eingestiegen | Strong | to get in / on |
+| **fliegen** | ist geflogen | Strong | to fly |
+| **packen** | hat gepackt | Weak | to pack |
+| **reisen** | ist gereist | Weak | to travel |
+| **schwimmen** | ist/hat geschwommen | Strong | to swim |
+| **überqueren** | hat überquert | Weak | to cross (a street/river) |
 
 ### 4. Social Interaction, Wishes & Emotions
-*Interacting with others and expressing desires.*
+*Interpersonal dynamics, internal sentiments, choices, and human desires.*
 
-| Verb (Infinitive) | Meaning | Participle (Perfekt) | Type |
+| Infinitive | Perfekt | Type | Meaning |
 | :--- | :--- | :--- | :--- |
-| **beginnen** | to begin | begonnen | Strong |
-| **bieten** | to offer | geboten | Strong |
-| **bitten** | to request | gebeten | Strong |
-| **feiern** | to celebrate | gefeiert | Weak |
-| **hassen** | to hate | gehasst | Weak |
-| **helfen** | to help | geholfen | Strong |
-| **hoffen** | to hope | gehofft | Weak |
-| **nehmen** | to take | genommen | Strong |
-| **schaffen** | to create/manage | geschafft | Weak |
-| **schicken** | to send | geschickt | Weak |
-| **träumen** | to dream | geträumt | Weak |
-| **verlieren** | to lose | verloren | Strong |
-| **wünschen** | to wish | gewünscht | Weak |
+| **beginnen** | hat begonnen | Strong | to begin |
+| **beobachten** | hat beobachtet | Weak | to observe |
+| **bewundern** | hat bewundert | Weak | to admire |
+| **bieten** | hat geboten | Strong | to offer |
+| **bitten** | hat gebeten | Strong | to request |
+| **feiern** | hat gefeiert | Weak | to celebrate |
+| **hassen** | hat gehasst | Weak | to hate |
+| **helfen** | hat geholfen | Strong | to help |
+| **hoffen** | hat gehofft | Weak | to hope |
+| **merken** | hat gemerkt | Weak | to notice |
+| **nehmen** | hat genommen | Strong | to take |
+| **schaffen** | hat geschafft | Weak | to create / manage |
+| **schicken** | hat geschickt | Weak | to send |
+| **träumen** | hat geträumt | Weak | to dream |
+| **wählen** | hat gewählt | Weak | to select / vote |
+| **wünschen** | hat gewünscht | Weak | to wish |
 
 ### 5. Business, Time & Daily Life
-*Transactions and impersonal events.*
+*Financial transactions, schedules, operational commitments, and routine occurrences.*
 
-| Verb (Infinitive) | Meaning | Participle (Perfekt) | Type |
+| Infinitive | Perfekt | Type | Meaning |
 | :--- | :--- | :--- | :--- |
-| **bezahlen** | to pay | bezahlt | Weak |
-| **dauern** | to last/duration | gedauert | Weak |
-| **mieten** | to rent | gemietet | Weak |
-| **passen** | to fit/suit | gepasst | Weak |
-| **schneien** | to snow | geschneit | Weak |
-| **trinken** | to drink | getrunken | Strong |
+| **abgeben** | hat abgegeben | Strong | to hand over / submit |
+| **bezahlen** | hat bezahlt | Weak | to pay |
+| **dauern** | hat gedauert | Weak | to last / duration |
+| **erben** | hat geerbt | Weak | to inherit |
+| **mieten** | hat gemietet | Weak | to rent |
+| **passen** | hat gepasst | Weak | to fit / suit |
+| **schließen** | hat geschlossen | Strong | to close |
+| **schneien** | hat geschneit | Weak | to snow |
+| **sich erinnern** | hat sich erinnert | Weak | to remember |
+| **trinken** | hat getrunken | Strong | to drink |
+| **verlieren** | hat verloren | Strong | to lose |
+| **verpassen** | hat verpasst | Weak | to miss (an event/train) |
+| **versprechen** | hat versprochen | Strong | to promise |
+
+---
+
+## IV. Comprehensive Vocabulary & Expressions
+All non-verb lexical entries are structured into precise linguistic classifications, alphabetized, and complete with essential morphological markers.
+
+### 1. Nouns (Substantive)
+*Nouns are listed with their definitive article, genitive singular ending, and plural form to guarantee precise declension mastery.*
+
+* **der Abgeordnete** | *[ein Abgeordneter]* | **-n** – politician / member of parliament *(Adjectival Noun)*
+* **der Aufzug** | **-(e)s, ⸚e** – elevator / lift
+* **der Briefumschlag** | **-(e)s, ⸚e** – envelope
+* **die Etage** | **, -n** – floor / storey
+* **der Glückspilz** | **-es, -e** – lucky devil / lucky person
+* **der Hof** | **-(e)s, ⸚e** – courtyard / yard
+* **die Kasse** | **, -n** – checkout / cash register
+* **die Kneipe** | **, -n** – pub / tavern
+* **der Knopf** | **-(e)s, ⸚e** – button
+* **das Schild** | **-(e)s, -er** – sign / signboard *(Note: der Schild, -e means protective shield)*
+* **die Treppe** | **, -n** – stairs / staircase
+* **die Unterlagen** | *[nur Plural]* – documents / paperwork
+* **die Verabredung** | **, -en** – date / appointment
+* **die Verbindung** | **, -en** – connection
+* **der Vertrag** | **-(e)s, ⸚e** – contract
+* **das Zeichen** | **-s, --** – sign / symbol / signal
+
+### 2. Adjectives & Adverbs (Adjektive & Adverbien)
+*In German, descriptive adjectives function naturally as adverbs when modifying a verb. Irregular inflections are marked.*
+
+* **blass** – pale
+* **dringend** – urgent / urgently
+* **edel** *[inflected: edle, edler, edles]* – upscale / noble / precious
+* **fest** – firm / firmly / tight
+* **gespenstisch** – ghostly / eerie
+* **verschollen** – missing / lost *(whereabouts unknown / past-participle adjective)*
+* **ziellos** – aimless / aimlessly
+
+### 3. Idioms & Expressions (Phrasen)
+* **Schlange stehen** – to stand in line / queue up
+* **sich Sorgen machen** – to worry
+* **Sie ist anders als sonst.** – She is different than usual.
+* **wie sonst** – as usual
