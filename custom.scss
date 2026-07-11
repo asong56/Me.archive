@@ -1,0 +1,194 @@
+/* ================================================================
+   YOHAKU — 余白
+   One accent · Three neutral tiers · The rest is whitespace
+   Light: 浅葱 #33A6B8 · Dark: 桃 #F596AA
+   Typefaces: Gilda Display (headings) · Open Sans (body)
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-header: 'Gilda Display', Georgia, serif;
+  --font-body: 'Open Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --line-height-body: 1.85;
+  --line-height-heading: 1.2;
+  --letter-spacing-heading: -0.01em;
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Base ────────────────────────────────────────────────────────── */
+body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: var(--line-height-body);
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ──────────────────────────────────────────────────────── */
+#quartz-body { max-width: 1100px; margin: 0 auto; }
+
+article.popover-hint {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Headings — Gilda Display, weighted restraint ────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  font-weight: 400; /* Gilda is display-weight by design, no bold needed */
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: var(--line-height-heading);
+  color: var(--dark);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.2em;
+  margin-top: 2.5rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-top: 1.8rem;
+  font-style: italic;
+  color: var(--darkgray);
+}
+
+/* ── Body prose ──────────────────────────────────────────────────── */
+p { color: var(--darkgray); margin-bottom: 1rem; }
+
+/* ── Links ───────────────────────────────────────────────────────── */
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s var(--ease-out-expo), color 0.2s var(--ease-out-expo);
+}
+a:hover { border-bottom-color: var(--secondary); }
+
+/* ── Sidebar ─────────────────────────────────────────────────────── */
+#left-sidebar { font-size: 13px; font-family: var(--font-body); font-weight: 400; }
+.sidebar-container { padding-top: 2rem; }
+.page-title { font-family: var(--font-header); font-size: 1.05rem; color: var(--dark); opacity: 0.85; }
+.explorer-content a { color: var(--darkgray); border-bottom: none; transition: color 0.15s var(--ease-out-expo); }
+.explorer-content a:hover { color: var(--secondary); border-bottom: none; }
+
+/* ── Table of Contents ───────────────────────────────────────────── */
+.toc { font-size: 12.5px; border-left: 2px solid var(--lightgray); padding-left: 1rem; }
+.toc a { color: var(--gray); border-bottom: none; }
+.toc a:hover { color: var(--secondary); }
+
+/* ── Tables ──────────────────────────────────────────────────────── */
+table { border-collapse: collapse; width: 100%; font-size: 13px; margin: 1.5rem 0; }
+thead tr { background: var(--lightgray); }
+th {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  color: var(--dark);
+  border-bottom: 2px solid var(--gray);
+}
+td { padding: 0.45rem 0.75rem; border-bottom: 1px solid var(--lightgray); color: var(--darkgray); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+
+/* ── Code ────────────────────────────────────────────────────────── */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  background: var(--lightgray);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  color: var(--darkgray);
+}
+pre {
+  border-radius: 6px;
+  border: 1px solid var(--lightgray);
+  padding: 1.1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+pre code { background: none; padding: 0; font-size: inherit; }
+
+/* ── Blockquote ──────────────────────────────────────────────────── */
+blockquote {
+  border-left: 2px solid var(--secondary);
+  margin: 1.5rem 0;
+  padding: 0.25rem 1.25rem;
+  color: var(--gray);
+  font-style: italic;
+  font-family: var(--font-header);
+  font-size: 1.05rem;
+}
+blockquote p { color: inherit; }
+
+/* ── KaTeX ───────────────────────────────────────────────────────── */
+.katex { font-size: 1em !important; }
+.katex-display { margin: 1.2rem 0; overflow-x: auto; }
+
+/* ── Details / summary ───────────────────────────────────────────── */
+details { border: 1px solid var(--lightgray); border-radius: 5px; padding: 0.5rem 1rem; margin: 1.2rem 0; }
+summary { font-size: 12.5px; font-weight: 500; color: var(--gray); cursor: pointer; list-style: none; user-select: none; }
+summary::-webkit-details-marker { display: none; }
+summary::before { content: '▸  '; color: var(--secondary); font-size: 0.7em; }
+details[open] summary::before { content: '▾  '; }
+
+/* ── Tags ────────────────────────────────────────────────────────── */
+.tag-link {
+  font-size: 11px; padding: 2px 8px; border-radius: 99px;
+  background: var(--lightgray); color: var(--gray);
+  font-weight: 400; border-bottom: none;
+  transition: background 0.15s, color 0.15s;
+}
+.tag-link:hover { background: var(--highlight); color: var(--secondary); border-bottom: none; }
+
+/* ── Footer ──────────────────────────────────────────────────────── */
+footer { font-size: 12px; color: var(--gray); border-top: 1px solid var(--lightgray); margin-top: 3rem; padding-top: 1rem; }
+
+/* ── Entry animation ─────────────────────────────────────────────── */
+@keyframes yohaku-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+article { animation: yohaku-in 0.45s var(--ease-out-expo) both; }
+
+/* ── Images ──────────────────────────────────────────────────────── */
+img { max-width: 100%; border-radius: 4px; display: block; margin: 1.2rem auto; }
+
+/* ── HR ──────────────────────────────────────────────────────────── */
+hr { border: none; border-top: 1px solid var(--lightgray); margin: 2.5rem 0; }
+
+/* ── Lists ───────────────────────────────────────────────────────── */
+ul, ol { padding-left: 1.4rem; color: var(--darkgray); }
+li { margin-bottom: 0.3rem; line-height: 1.7; }
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  article.popover-hint { padding: 0 1rem; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.15rem; }
+  table { font-size: 12px; display: block; overflow-x: auto; }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  article { animation: none; }
+  a { transition: none; }
+}
