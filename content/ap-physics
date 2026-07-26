@@ -1,0 +1,550 @@
+// ── Colour palette (5 semantic colors) ──────────────────────────────
+#let c-bg     = rgb("#F8F8FA")
+#let c-border = rgb("#D4D4DE")
+#let c-text   = rgb("#2E2E38")
+#let c-muted  = rgb("#7A7A8A")
+#let c-blue   = rgb("#2563EB")
+
+// ── Page: A4 landscape, two columns, folds to A5 ─────────────────────
+#set page(
+    paper: "a4",
+    flipped: true,
+    margin: (x: 13mm, y: 13mm),
+    fill: c-bg,
+    columns: 2,
+)
+#set text(
+    font: ("Inter", "Liberation Sans", "DejaVu Sans"),
+    size: 9pt,
+    fill: c-text,
+    weight: "regular",
+    tracking: 0.01em,
+)
+#set par(leading: 0.65em, justify: false, spacing: 0.65em)
+
+// ── Level-1 heading: major section title ─────────────────────────────
+#show heading.where(level: 1): it => {
+    block(width: 100%, breakable: false)[
+        #line(length: 100%, stroke: 0.5pt + c-border)
+        #v(4pt)
+        #text(size: 9.5pt, weight: "bold", fill: c-blue, tracking: 0.02em)[#it.body]
+        #v(5pt)
+    ]
+}
+
+// ── Level-2 heading: subsection ──────────────────────────────────────
+#show heading.where(level: 2): it => {
+    v(10pt)
+    block(width: 100%, breakable: false)[
+        #text(size: 8.5pt, weight: "semibold", fill: c-text)[#it.body]
+        #v(2pt)
+        #line(length: 100%, stroke: 0.4pt + c-border)
+        #v(5pt)
+    ]
+}
+
+// ── entry: formula line + optional indented note ──────────────────────
+#let entry(eq, note: none) = {
+    block(breakable: false, width: 100%)[
+        #v(5pt)
+        #eq
+        #if note != none {
+            v(3pt)
+            block(
+                stroke: (left: 1.2pt + c-border),
+                inset: (left: 7pt, top: 1pt, bottom: 1pt),
+                width: 100%,
+            )[
+                #set text(size: 7.8pt, fill: c-muted)
+                #set par(leading: 0.55em, spacing: 0.55em)
+                #note
+            ]
+        }
+        #v(7pt)
+    ]
+}
+
+// ── dual: two formula columns with a centre rule via table stroke ──────
+#let dual(left, right, note-left: none, note-right: none) = {
+    v(5pt)
+    block(breakable: false, width: 100%)[
+        #table(
+            columns: (1fr, 1fr),
+            stroke: (x, y) => if x == 1 { (left: 0.4pt + c-border) } else { none },
+            inset: (x: 8pt, y: 0pt),
+            align: alignment.top + alignment.left,
+            // left cell
+            {
+                left
+                if note-left != none {
+                    v(2pt)
+                    block(
+                        stroke: (left: 1.2pt + c-border),
+                        inset: (left: 7pt, top: 1pt, bottom: 1pt),
+                        width: 100%,
+                    )[
+                        #set text(size: 7.8pt, fill: c-muted)
+                        #set par(leading: 0.55em, spacing: 0.55em)
+                        #note-left
+                    ]
+                }
+            },
+            // right cell
+            {
+                right
+                if note-right != none {
+                    v(2pt)
+                    block(
+                        stroke: (left: 1.2pt + c-border),
+                        inset: (left: 7pt, top: 1pt, bottom: 1pt),
+                        width: 100%,
+                    )[
+                        #set text(size: 7.8pt, fill: c-muted)
+                        #set par(leading: 0.55em, spacing: 0.55em)
+                        #note-right
+                    ]
+                }
+            },
+        )
+    ]
+    v(7pt)
+}
+
+// ── alabel: small caps label for analogy headers ──────────────────────
+#let alabel(body) = {
+    text(size: 7pt, weight: "semibold", tracking: 0.07em, fill: c-muted)[#upper(body)]
+}
+
+// ── aheader: paired column labels, matching dual() column widths ───────
+#let aheader(left, right) = {
+    v(8pt)
+    table(
+        columns: (1fr, 1fr),
+        stroke: none,
+        inset: (x: 8pt, y: 0pt),
+        alabel[#left],
+        alabel[#right],
+    )
+    v(3pt)
+}
+
+
+// ══════════════════════════════════════════════════════════════════════
+//  COVER / TITLE  (shares page 1 with Section I)
+// ══════════════════════════════════════════════════════════════════════
+
+#block(width: 100%, breakable: false)[
+    #text(size: 11pt, weight: "bold", fill: c-text)[AP Physics Reference]
+    #h(1fr)
+    #text(size: 7.5pt, fill: c-muted)[AP-1 · AP-2 · C: Mech · C: E&M]
+    #v(4pt)
+    #line(length: 100%, stroke: 0.8pt + c-border)
+]
+#v(3pt)
+#block(width: 100%)[
+    #set text(size: 7.5pt, fill: c-muted)
+    #set par(leading: 0.6em)
+    *Conservation hierarchy:* #h(5pt)
+    $sum bold(F)=0$ → $bold(p)$ conserved #h(8pt)
+    $sum bold(tau)=0$ → $bold(L)$ conserved #h(8pt)
+    $W_"nc"=0$ → $E_"mech"$ conserved
+]
+#v(6pt)
+
+// ══════════════════════════════════════════════════════════════════════
+= I · Kinematics
+// ══════════════════════════════════════════════════════════════════════
+
+// Translation ↔ Rotation analogy: left/right across the A5 centre axis
+#aheader[Translation][Rotation ↔ connection]
+#block(breakable: false, width: 100%)[
+    #set par(leading: 0.75em, spacing: 0.75em)
+    #table(
+        columns: (1fr, 1fr),
+        stroke: (x, y) => if x == 1 { (left: 0.4pt + c-border) } else { none },
+        inset: (x: 8pt, y: 4pt),
+        align: alignment.top + alignment.left,
+        [
+            #set text(size: 8.5pt)
+            $x$ — position \
+            $v = dot(x)$ — velocity \
+            $a = dot.double(x)$ — acceleration \
+            $m$ — inertia \
+            $bold(F) = m bold(a)$ — dynamics \
+            $K = frac(1,2)m v^2$
+        ],
+        [
+            #set text(size: 8.5pt)
+            $theta$ — position #h(1fr) $x = r theta$ \
+            $omega = dot(theta)$ — ang. vel. #h(1fr) $v = r omega$ \
+            $alpha = dot.double(theta)$ — ang. acc. #h(1fr) $a_t = r alpha$ \
+            $I = integral r^2 d m$ — rotational inertia \
+            $bold(tau) = I bold(alpha)$ #h(1fr) $bold(tau) = bold(r) times bold(F)$ \
+            $K = frac(1,2)I omega^2$
+        ],
+    )
+    #v(4pt)
+    #line(length: 100%, stroke: 0.3pt + c-border)
+]
+
+== Const.-accel. equations
+
+// Translational and rotational kinematic equations side by side
+#aheader[Translational ($a$ = const)][Rotational ($alpha$ = const)]
+
+#dual(
+    $v = v_0 + a t$,
+    $omega = omega_0 + alpha t$,
+)
+#dual(
+    $x = x_0 + v_0 t + frac(1,2)a t^2$,
+    $theta = theta_0 + omega_0 t + frac(1,2)alpha t^2$,
+)
+#entry($v^2 = v_0^2 + 2a(x - x_0)$, note: [
+    Eliminates $t$. Projectile: $a_x = 0$, $a_y = -g$ independently.
+])
+
+== Calculus Forms
+
+#entry(
+    $v(t) = frac(d x, d t) quad a(t) = frac(d^2 x, d t^2) quad x = x_0 + integral_(t_0)^t v thin d t'$,
+    note: [Use when $a != "const"$. Same form holds for $theta, omega, alpha$.]
+)
+
+== Circular Motion
+
+#entry($a_c = frac(v^2, r) = omega^2 r$, note: [
+    Centripetal — directed toward center; provided by tension, gravity, friction etc. Not an extra force. \
+    Centrifugal force is fictitious (rotating frame only).
+])
+
+
+// ══════════════════════════════════════════════════════════════════════
+#pagebreak()
+= II · Conservation Laws
+// ══════════════════════════════════════════════════════════════════════
+
+== Momentum & Impulse
+
+#entry($bold(p) = m bold(v) quad bold(J) = integral bold(F) thin d t = Delta bold(p)$, note: [
+    $bold(F)_"ext" = 0 => sum bold(p)_i = sum bold(p)_f$ \
+    Elastic: $bold(p)$ and $E_k$ both conserved. Perfectly inelastic: $bold(p)$ only.
+])
+
+== Work & Energy
+
+#entry($W = F d cos theta = integral bold(F) dot d bold(x)$, note: [
+    Constant-force form is a special case; equals area under $F$–$x$ curve.
+])
+
+#entry($E_k = frac(1,2)m v^2 quad U_g = m g h quad U_s = frac(1,2)k x^2$, note: [
+    $bold(F) = -nabla U$. #h(6pt) If $W_"nc" = 0$: $E_k + U = "const"$.
+])
+
+#entry($U_g = -frac(G M m, r) quad P = frac(W, t) = bold(F) dot bold(v)$, note: [
+    $G = 6.674 times 10^(-11)$ N·m²/kg². $U_g -> 0$ as $r -> infinity$. Escape speed: $v_"esc" = sqrt(2G M\/R)$.
+])
+
+== Angular Momentum
+
+#entry($bold(L) = I bold(omega) = bold(r) times bold(p) quad bold(tau)_"net" = frac(d bold(L), d t)$, note: [
+    $tau = I alpha$ when $I = "const"$. \
+    Conservation: $bold(tau)_"ext" = 0 => bold(L) = "const"$.
+])
+
+== Center of Mass
+
+#entry(
+    $bold(r)_"cm" = frac(sum m_i bold(r)_i, M) = frac(integral bold(r) thin d m, M)$,
+    note: [$bold(F)_"ext" = M bold(a)_"cm"$.]
+)
+
+
+// ══════════════════════════════════════════════════════════════════════
+#pagebreak()
+= III · Forces & Dynamics
+// ══════════════════════════════════════════════════════════════════════
+
+== Newton's Laws
+
+#entry($bold(F)_"net" = m bold(a) = frac(d bold(p), d t)$, note: [
+    N-I: $bold(F)_"net" = 0 => bold(a) = 0$. \
+    N-III: $bold(F)_(A->B) = -bold(F)_(B->A)$ (forces act on different objects).
+])
+
+#entry($f_s <= mu_s N quad f_k = mu_k N$, note: [
+    $N$: normal force. Typically $mu_s > mu_k$.
+])
+
+#entry($F = -k x$, note: [Hooke's law. Restoring force opposes displacement.])
+
+== Rotational Dynamics
+
+#entry($tau = r F sin theta = I alpha quad I = integral r^2 thin d m = I_"cm" + M d^2$, note: [
+    Parallel-axis theorem. Common $I$: solid sphere $frac(2,5)M R^2$; cylinder $frac(1,2)M R^2$; rod (center) $frac(1,12)M L^2$; hoop $M R^2$. \
+    Rolling: $v = omega r$, $K = frac(1,2)m v^2 + frac(1,2)I omega^2$.
+])
+
+== Simple Harmonic Motion
+
+// Mass-spring ↔ LC circuit analogy across centre axis
+#aheader[Mass-Spring][LC Circuit]
+#block(breakable: false, width: 100%)[
+    #set par(leading: 0.75em, spacing: 0.75em)
+    #table(
+        columns: (1fr, 1fr),
+        stroke: (x, y) => if x == 1 { (left: 0.4pt + c-border) } else { none },
+        inset: (x: 8pt, y: 4pt),
+        align: alignment.top + alignment.left,
+        [
+            #set text(size: 8.5pt)
+            coord: $x$ \
+            inertia: $m$ \
+            restoring: $k$ \
+            $omega = sqrt(k\/m)$ \
+            $E = frac(1,2)k x^2 + frac(1,2)m v^2$
+        ],
+        [
+            #set text(size: 8.5pt)
+            coord: $q$ \
+            inertia: $L$ \
+            restoring: $1\/C$ \
+            $omega = sqrt(1\/(L C))$ \
+            $E = Q^2\/(2C) + frac(1,2)L I^2$
+        ],
+    )
+    #v(4pt)
+    #line(length: 100%, stroke: 0.3pt + c-border)
+]
+
+#entry($T_"spring" = 2pi sqrt(frac(m,k)) quad T_"pend" = 2pi sqrt(frac(L,g))$, note: [
+    Pendulum valid for $theta lt.tilde 15°$; independent of mass and amplitude.
+])
+
+#entry($frac(d^2 x, d t^2) = -omega^2 x quad => quad x(t) = A cos(omega t + phi_0)$, note: [
+    $v_"max" = A omega$ at $x = 0$. $quad a_"max" = A omega^2$ at $x = plus.minus A$.
+])
+
+== Gravitation & Orbits
+
+#entry($F = G frac(m_1 m_2, r^2) quad g = frac(G M, R^2) quad v_"orb" = sqrt(frac(G M, r))$)
+
+#entry($frac(T^2, a^3) = frac(4pi^2, G M)$, note: [
+    Kepler III. I: elliptical orbits, central body at one focus. II: equal areas in equal times.
+])
+
+== Fluid Mechanics
+
+#entry($F_b = rho_f V_"disp" g$, note: [Archimedes: buoyancy = weight of displaced fluid.])
+
+#entry($A_1 v_1 = A_2 v_2 quad P + frac(1,2)rho v^2 + rho g h = "const"$, note: [
+    Continuity (incompressible) + Bernoulli. High speed → low static pressure.
+])
+
+
+// ══════════════════════════════════════════════════════════════════════
+#pagebreak()
+= IV · Field Theory
+// ══════════════════════════════════════════════════════════════════════
+
+// Gravity ↔ Electrostatics analogy across centre axis
+#aheader[Gravitational Field][Electric Field]
+#block(breakable: false, width: 100%)[
+    #set par(leading: 0.75em, spacing: 0.75em)
+    #table(
+        columns: (1fr, 1fr),
+        stroke: (x, y) => if x == 1 { (left: 0.4pt + c-border) } else { none },
+        inset: (x: 8pt, y: 4pt),
+        align: alignment.top + alignment.left,
+        [
+            #set text(size: 8.5pt)
+            source: mass $M$ (attract only) \
+            $bold(g) = bold(F)\/m$ \
+            $g = G M\/r^2$ \
+            $integral.cont bold(g) dot d bold(A) = -4pi G M_"encl"$ \
+            $V_g = -G M\/r$ \
+            $U_g = m V_g$
+        ],
+        [
+            #set text(size: 8.5pt)
+            source: charge $Q$ (attract / repel) \
+            $bold(E) = bold(F)\/q$ \
+            $E = k Q\/r^2$ \
+            $integral.cont bold(E) dot d bold(A) = Q_"encl"\/epsilon_0$ \
+            $V_e = k Q\/r$ \
+            $U_e = q V_e$
+        ],
+    )
+    #v(4pt)
+    #line(length: 100%, stroke: 0.3pt + c-border)
+]
+
+== Electric Force & Field
+
+#entry($bold(F) = k frac(q_1 q_2, r^2) hat(r) = q bold(E) quad bold(E) = k frac(Q, r^2) hat(r) = frac(Delta V, Delta d) = integral frac(k thin d q, r^2) hat(r)$, note: [
+    $k = 8.99 times 10^9$ N·m²/C². Like charges repel; opposite attract.
+])
+
+== Gauss's Law
+
+#entry($Phi_E = integral.cont bold(E) dot d bold(A) = frac(Q_"encl", epsilon_0)$, note: [
+    $epsilon_0 = 8.854 times 10^(-12)$ F/m. \
+    Inf. line: $E = lambda\/(2pi epsilon_0 r)$; infinite sheet: $E = sigma\/(2 epsilon_0)$.
+])
+
+== Potential & Energy
+
+#entry($U_E = q V quad V = k integral frac(d q, r) quad bold(E) = -nabla V$, note: [
+    Equipotentials ⊥ field lines. $Delta V = -integral bold(E) dot d bold(r)$.
+])
+
+== Capacitors
+
+#entry($C = frac(Q, V) = epsilon_0 frac(A, d) quad U_C = frac(1,2)C V^2 = frac(Q^2, 2C)$, note: [
+    Series: $1\/C_"eq" = sum 1\/C_i$. Parallel: $C_"eq" = sum C_i$. \
+    Energy density: $u_E = frac(1,2) epsilon_0 E^2$.
+])
+
+== Magnetic Force
+
+#entry($bold(F) = q(bold(E) + bold(v) times bold(B))$, note: [
+    $bold(F)_B perp bold(v)$; does no work. $|F_B| = |q|v B sin theta$. \
+    Current-carrying wire: $bold(F) = I bold(L) times bold(B)$.
+])
+
+#entry($Phi_B = B A cos theta quad integral.cont bold(B) dot d bold(A) = 0$, note: [
+    No magnetic monopoles; $bold(B)$ field lines form closed loops.
+])
+
+== Biot-Savart & Ampere–Maxwell
+
+#entry($d bold(B) = frac(mu_0, 4pi) frac(I thin d bold(l) times hat(r), r^2)$, note: [
+    $mu_0 = 4pi times 10^(-7)$ H/m. \
+    Infinite wire: $B = mu_0 I\/(2pi r)$. Loop center: $B = mu_0 I\/(2R)$.
+])
+
+#entry($integral.cont bold(B) dot d bold(s) = mu_0 I_"encl" + mu_0 epsilon_0 frac(d Phi_E, d t)$, note: [
+    Displacement current → EM waves: $c = 1\/sqrt(mu_0 epsilon_0) approx 3.00 times 10^8$ m/s. \
+    Ampère's law: static case ($d Phi_E\/d t = 0$).
+])
+
+
+// ══════════════════════════════════════════════════════════════════════
+#pagebreak()
+= V · Circuits & Induction
+// ══════════════════════════════════════════════════════════════════════
+
+== DC Circuits
+
+#entry($V = I R quad P = I V = I^2 R = frac(V^2, R)$, note: [
+    Series: $R_"eq" = sum R_i$. Parallel: $1\/R_"eq" = sum 1\/R_i$.
+])
+
+== Faraday's Law & Induction
+
+#entry($cal(E) = -frac(d Phi_B, d t) = -integral.cont bold(E) dot d bold(s) quad cal(E)_L = -L frac(d I, d t)$, note: [
+    Lenz: induced current opposes flux change. Motional EMF: $cal(E) = B L v$. Inductor opposes $Delta I$.
+])
+
+== RL & RC Circuits
+
+#aheader[RL — charging][RC — charging]
+
+#dual(
+    $I(t) = frac(cal(E), R)(1 - e^(-t\/tau_L))$,
+    $q(t) = C cal(E)(1 - e^(-t\/tau_C))$,
+    note-left: [
+        $tau_L = L\/R$. At $tau_L$: $I approx 63%$ of $cal(E)\/R$. \
+        $U_L = frac(1,2)L I^2$. Mag. density: $u_B = B^2\/(2mu_0)$.
+    ],
+    note-right: [
+        $tau_C = R C$. Discharge: $q = Q_0 e^(-t\/tau_C)$. \
+        Loop: $cal(E) = I R + q\/C$. Elec. density: $u_E = frac(1,2)epsilon_0 E^2$.
+    ],
+)
+
+== LC & RLC Oscillations
+
+#entry($frac(d^2 q, d t^2) + frac(q, L C) = 0 quad => quad omega_0 = frac(1, sqrt(L C))$, note: [
+    Ideal LC: energy oscillates between $frac(1,2)L I^2$ and $Q^2\/(2C)$ — analogous to mass-spring. \
+    RLC (damped): $frac(d^2 q, d t^2) + frac(R, L) frac(d q, d t) + frac(q, L C) = 0$.
+])
+
+
+// ══════════════════════════════════════════════════════════════════════
+= VI · Optics · Thermo · Quantum
+// ══════════════════════════════════════════════════════════════════════
+
+== Geometric Optics
+
+#entry($n_1 sin theta_1 = n_2 sin theta_2 quad frac(1,f) = frac(1,d_o) + frac(1,d_i) quad m = -frac(d_i,d_o)$, note: [
+    $n = c\/v$. Denser medium → toward normal. TIR: $sin theta_c = n_2\/n_1$ ($n_1 > n_2$). \
+    $m < 0$: inverted; $|m| > 1$: magnified.
+])
+
+== EM Waves
+
+#entry($c = lambda f = frac(1, sqrt(mu_0 epsilon_0)) approx 3.00 times 10^8 "m/s"$, note: [
+    In medium of index $n$: $v = c\/n$.
+])
+
+// Electromagnetic spectrum — one continuous gradient bar, lightened 80%
+#block(breakable: false, width: 100%)[
+    #v(4pt)
+    // segment labels above the bar, proportional widths
+    #grid(
+        columns: (0.9fr, 1.3fr, 0.8fr, 0.8fr, 1.3fr, 1.5fr),
+        gutter: 0pt,
+        align: center,
+        ..([γ-rays], [X-rays], [UV], [Visible], [IR], [Radio]).map(t =>
+            text(size: 6.5pt, fill: c-muted, weight: "semibold")[#t]
+        ),
+    )
+    #v(2pt)
+    // single gradient bar spanning all bands, each stop lightened 80%
+    #block(
+        width: 100%,
+        height: 18pt,
+        radius: 3pt,
+        fill: gradient.linear(
+            rgb("#1e1b4b").lighten(80%),  // γ
+            rgb("#4338ca").lighten(80%),  // X-ray
+            rgb("#7c3aed").lighten(80%),  // UV
+            rgb("#8b00ff").lighten(80%),  // violet edge
+            rgb("#2563eb").lighten(80%),  // blue
+            rgb("#16a34a").lighten(80%),  // green
+            rgb("#ca8a04").lighten(80%),  // yellow
+            rgb("#ea580c").lighten(80%),  // orange
+            rgb("#dc2626").lighten(80%),  // red edge
+            rgb("#b91c1c").lighten(80%),  // IR
+            rgb("#6b7280").lighten(80%),  // Radio
+            dir: ltr,
+        ),
+    )
+    // wavelength tick labels below the bar
+    #v(2pt)
+    #grid(
+        columns: (1fr, 1fr, 1fr, 1fr, 1fr),
+        gutter: 0pt,
+        align: center,
+        ..([0.01 nm], [10 nm], [400 nm], [700 nm], [1 mm]).map(t =>
+            text(size: 6pt, fill: c-muted)[#t]
+        ),
+    )
+    #v(6pt)
+]
+
+== Thermodynamics
+
+#entry($P V = n R T quad Delta U = Q + W$, note: [
+    $R = 8.314$ J/(mol·K). $T_K = T_"°C" + 273.15$. $Q > 0$: heat in; $W > 0$: work on system. \
+    2nd law: $Delta S_"universe" >= 0$. Carnot: $eta = 1 - T_C\/T_H$.
+])
+
+== Quantum & Modern Physics
+
+#entry($E = h f = frac(h c, lambda)$, note: [
+    $h = 6.626 times 10^(-34)$ J·s. \
+    Photoelectric: $K_"max" = h f - phi$ ($phi$: work function). \
+    de Broglie: $lambda = h\/p$. Mass–energy: $E = m c^2$.
+])
