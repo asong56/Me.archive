@@ -1,5 +1,7 @@
 <h1 align="center">🏛️ Me.archive</h1>
 
+*Planning to move this to my GitHub pages site[asong56.github.io](https://github.com/asong56/asong56.github.io)*
+
 <h6 align="center">
   <i>This is a structured system for my academic notes.</i>
 </h6>
